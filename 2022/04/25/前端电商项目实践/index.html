@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cgr916.github.io/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-1.png">
 <meta property="article:published_time" content="2022-04-25T13:08:49.000Z">
-<meta property="article:modified_time" content="2022-04-26T11:00:28.069Z">
+<meta property="article:modified_time" content="2022-04-26T11:18:12.562Z">
 <meta property="article:author" content="Chan_GR">
 <meta property="article:tag" content="项目实践">
 <meta name="twitter:card" content="summary">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-26 19:00:28" itemprop="dateModified" datetime="2022-04-26T19:00:28+08:00">2022-04-26</time>
+                <time title="修改时间：2022-04-26 19:18:12" itemprop="dateModified" datetime="2022-04-26T19:18:12+08:00">2022-04-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -212,7 +212,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>572</span>
+              <span>640</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -242,7 +242,24 @@
 其中需要被切换页面组件为路由组件，一般放置于pages\views文件夹中。
 固定的页面或需要被其他路由页面使用的页面组件为非路由组件，一般放置于components文件夹中。
 </code></pre>
-<h3 id="03-vue-router的使用："><a href="#03-vue-router的使用：" class="headerlink" title="03-vue-router的使用："></a>03-vue-router的使用：</h3><p>1.使用步骤：引入vue-router -&gt; vue使用vue-router插件 -&gt; 将配置的路由暴露并在入口文件中配置给vue实例<br>2.路由配置：简单的配置主要包括component和path<br>3.相关问题：<br>    1、路由传参<br>    ①路由传参使用对象写法时：<br>        path无法结合params，需要使用name来结合params使用；<br>        query二者均可。<br>    ② params参数配置可传可不传：<br>        在路由配置处params参数后添加 <strong>?</strong><br>    ③ params参数为空 如何处理：<br>        || ‘’(并上空字符串)<br>    ④ props传参：<br>        布尔形式：参数为params参数；<br>        对象形式：<br>        函数形式：</p>
+<h3 id="03-vue-router的使用："><a href="#03-vue-router的使用：" class="headerlink" title="03-vue-router的使用："></a>03-vue-router的使用：</h3><ol>
+<li>使用步骤：引入vue-router -&gt; vue使用vue-router插件 -&gt; 将配置的路由暴露并在入口文件中配置给vue实例</li>
+<li>路由配置：简单的配置主要包括component和path</li>
+<li>相关问题：<ol>
+<li>路由传参<ol>
+<li>路由传参使用对象写法时：<br>path无法结合params，需要使用name来结合params使用；<br>query二者均可。</li>
+<li>params参数配置可传可不传：<br>在路由配置处params参数后添加 <strong>?</strong></li>
+<li>params参数为空 如何处理：<br>|| ‘’(并上空字符串)</li>
+<li>props传参：<br>布尔形式：参数为params参数；<br>对象形式：<br>函数形式：</li>
+</ol>
+</li>
+<li>路由导航<ol>
+<li>NavigationDuplicated问题：多次触发时会出现<br> 在push函数后添加promise，成功和失败的回调函数 -&gt; 比较麻烦<br> 修改 push 函数 </li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
     </div>
 
