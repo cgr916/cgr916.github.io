@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>计算机网络</title>
-    <url>/2022/03/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="计算机网络-微课堂笔记"><a href="#计算机网络-微课堂笔记" class="headerlink" title="计算机网络(微课堂笔记)"></a>计算机网络(微课堂笔记)</h1><h2 id="一、计算机网络概述"><a href="#一、计算机网络概述" class="headerlink" title="一、计算机网络概述"></a>一、计算机网络概述</h2><h3 id="1、作用：信息服务基础设施"><a href="#1、作用：信息服务基础设施" class="headerlink" title="1、作用：信息服务基础设施"></a>1、作用：信息服务基础设施</h3><h3 id="2、因特网概述"><a href="#2、因特网概述" class="headerlink" title="2、因特网概述:"></a>2、因特网概述:</h3><h4 id="①-网络、互连网-互联网-、因特网的区别"><a href="#①-网络、互连网-互联网-、因特网的区别" class="headerlink" title="①. 网络、互连网(互联网)、因特网的区别"></a>①. 网络、互连网(互联网)、因特网的区别</h4><pre><code>网络：节点 + 链路  
-互联网：互相连接的网络  
-因特网：最大的互联网  
-</code></pre>
-<h4 id="②-概述"><a href="#②-概述" class="headerlink" title="②. 概述"></a>②. 概述</h4><pre><code>发展阶段  
-标准化  
-组成部分：边缘部分(应用) + 核心部分(连通、交换)
-</code></pre>
-<h3 id="3、交换方式"><a href="#3、交换方式" class="headerlink" title="3、交换方式"></a>3、交换方式</h3><pre><code>包含三种：电路交换 报文交换 分组交换
-</code></pre>
-<!-- ![交换方式](./../../public/2022/03/07/计算机网络/1.1_交换方式.jpg) -->
-<pre><code>&#123;% asset_img 1.1_交换方式.png %&#125;
-</code></pre>
-]]></content>
-      <categories>
-        <category>编程基础</category>
-        <category>计网</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode刷题笔记</title>
     <url>/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="leetcode刷题"><a href="#leetcode刷题" class="headerlink" title="leetcode刷题"></a>leetcode刷题</h1><h2 id="一、链表"><a href="#一、链表" class="headerlink" title="一、链表"></a>一、链表</h2><h3 id="1、简单类型"><a href="#1、简单类型" class="headerlink" title="1、简单类型"></a>1、简单类型</h3><h4 id="01、合并两有序链表"><a href="#01、合并两有序链表" class="headerlink" title="01、合并两有序链表"></a>01、合并两有序链表</h4><p>1.题目描述：<br>    <img src="/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1-01-%E5%90%88%E5%B9%B6%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8.png" class></p>
@@ -47,7 +22,7 @@
 <ol>
 <li><strong>package.json</strong>:script操作脚本指令<br> 可以使其运行项目时自动打开浏览器</li>
 <li><strong>vue.config.js</strong>:<br> 可以关闭语法检查、配置代理服务器…</li>
-<li><strong>jsconfig.json</strong>:<br> 可以配置src文件夹别名 –&gt;@</li>
+<li><strong>jsconfig.json</strong>:<br> 可以配置src文件夹别名 –&gt; @</li>
 </ol>
 <h3 id="02-非路由组件与路由组件："><a href="#02-非路由组件与路由组件：" class="headerlink" title="02-非路由组件与路由组件："></a>02-非路由组件与路由组件：</h3><pre><code>由于当前使用的页面大多为单页面网页/应用，因此常常需要借助路由来实现页面切换。
 其中需要被切换页面组件为路由组件，一般放置于pages\views文件夹中。
@@ -71,12 +46,53 @@
 </ol>
 </li>
 </ol>
-]]></content>
+<h3 id="04-组件编写："><a href="#04-组件编写：" class="headerlink" title="04-组件编写："></a>04-组件编写：</h3>]]></content>
       <categories>
-        <category>前端电商项目</category>
+        <category>前端项目</category>
+        <category>电商项目</category>
       </categories>
       <tags>
         <tag>项目实践</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>后台管理项目实践</title>
+    <url>/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<h1 id="后台管理项目"><a href="#后台管理项目" class="headerlink" title="后台管理项目"></a>后台管理项目</h1><h2 id="day-01"><a href="#day-01" class="headerlink" title="day-01"></a>day-01</h2><h3 id="01-项目模板介绍"><a href="#01-项目模板介绍" class="headerlink" title="01-项目模板介绍"></a>01-项目模板介绍</h3><ol>
+<li>各文件介绍<img src="/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-01.png" class></li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端项目</category>
+        <category>后台管理项目</category>
+      </categories>
+      <tags>
+        <tag>项目实践</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2022/03/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="计算机网络-微课堂笔记"><a href="#计算机网络-微课堂笔记" class="headerlink" title="计算机网络(微课堂笔记)"></a>计算机网络(微课堂笔记)</h1><h2 id="一、计算机网络概述"><a href="#一、计算机网络概述" class="headerlink" title="一、计算机网络概述"></a>一、计算机网络概述</h2><h3 id="1、作用：信息服务基础设施"><a href="#1、作用：信息服务基础设施" class="headerlink" title="1、作用：信息服务基础设施"></a>1、作用：信息服务基础设施</h3><h3 id="2、因特网概述"><a href="#2、因特网概述" class="headerlink" title="2、因特网概述:"></a>2、因特网概述:</h3><h4 id="①-网络、互连网-互联网-、因特网的区别"><a href="#①-网络、互连网-互联网-、因特网的区别" class="headerlink" title="①. 网络、互连网(互联网)、因特网的区别"></a>①. 网络、互连网(互联网)、因特网的区别</h4><pre><code>网络：节点 + 链路  
+互联网：互相连接的网络  
+因特网：最大的互联网  
+</code></pre>
+<h4 id="②-概述"><a href="#②-概述" class="headerlink" title="②. 概述"></a>②. 概述</h4><pre><code>发展阶段  
+标准化  
+组成部分：边缘部分(应用) + 核心部分(连通、交换)
+</code></pre>
+<h3 id="3、交换方式"><a href="#3、交换方式" class="headerlink" title="3、交换方式"></a>3、交换方式</h3><pre><code>包含三种：电路交换 报文交换 分组交换
+</code></pre>
+<!-- ![交换方式](./../../public/2022/03/07/计算机网络/1.1_交换方式.jpg) -->
+<img src="/2022/03/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.1_%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F.png" class>
+
+]]></content>
+      <categories>
+        <category>编程基础</category>
+        <category>计网</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
 </search>
