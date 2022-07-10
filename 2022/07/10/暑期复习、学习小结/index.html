@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"cgr916.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="电商项目day-0101-项目初始化01.初始化项目后的各文件说明     02.项目其他配置  package.json:script操作脚本指令 可以使其运行项目时自动打开浏览器 vue.config.js: 可以关闭语法检查、配置代理服务器… jsconfig.json: 可以配置src文件夹别名 –&gt; @  02-非路由组件与路由组件：由于当前使用的页面大多为单页面网页&#x2F;应用，因此常">
+  <meta name="description" content="前期回顾07-06①复习Java部分知识点，包括基础、面向对象、异常、集合、反射  重点体现在：1、代理模式的理解：之所以使用代理，某种程度上是需要进行功能增强；              2、工厂模式的理解：由于对象(实例)创建过程与调用过程不分离会导致代码大量耦合，即                                改动所创建的对象是会运行到对象的调用过程；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端电商项目实践">
-<meta property="og:url" content="https://cgr916.github.io/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:title" content="暑期复习、学习小结">
+<meta property="og:url" content="https://cgr916.github.io/2022/07/10/%E6%9A%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E3%80%81%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="cgr的博客">
-<meta property="og:description" content="电商项目day-0101-项目初始化01.初始化项目后的各文件说明     02.项目其他配置  package.json:script操作脚本指令 可以使其运行项目时自动打开浏览器 vue.config.js: 可以关闭语法检查、配置代理服务器… jsconfig.json: 可以配置src文件夹别名 –&gt; @  02-非路由组件与路由组件：由于当前使用的页面大多为单页面网页&#x2F;应用，因此常">
+<meta property="og:description" content="前期回顾07-06①复习Java部分知识点，包括基础、面向对象、异常、集合、反射  重点体现在：1、代理模式的理解：之所以使用代理，某种程度上是需要进行功能增强；              2、工厂模式的理解：由于对象(实例)创建过程与调用过程不分离会导致代码大量耦合，即                                改动所创建的对象是会运行到对象的调用过程；">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cgr916.github.io/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-1.png">
-<meta property="article:published_time" content="2022-04-25T13:08:49.000Z">
-<meta property="article:modified_time" content="2022-04-28T14:54:05.427Z">
+<meta property="article:published_time" content="2022-07-10T14:01:35.000Z">
+<meta property="article:modified_time" content="2022-07-10T14:04:02.432Z">
 <meta property="article:author" content="Chan_GR">
-<meta property="article:tag" content="项目实践">
+<meta property="article:tag" content="日志">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cgr916.github.io/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-1.png">
 
-<link rel="canonical" href="https://cgr916.github.io/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
+<link rel="canonical" href="https://cgr916.github.io/2022/07/10/%E6%9A%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E3%80%81%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>前端电商项目实践 | cgr的博客</title>
+  <title>暑期复习、学习小结 | cgr的博客</title>
   
 
 
@@ -164,7 +162,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cgr916.github.io/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
+    <link itemprop="mainEntityOfPage" href="https://cgr916.github.io/2022/07/10/%E6%9A%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E3%80%81%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon.ico">
@@ -177,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          前端电商项目实践
+          暑期复习、学习小结
         </h1>
 
         <div class="post-meta">
@@ -186,27 +184,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-04-25 21:08:49" itemprop="dateCreated datePublished" datetime="2022-04-25T21:08:49+08:00">2022-04-25</time>
+              <time title="创建时间：2022-07-10 22:01:35 / 修改时间：22:04:02" itemprop="dateCreated datePublished" datetime="2022-07-10T22:01:35+08:00">2022-07-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-28 22:54:05" itemprop="dateModified" datetime="2022-04-28T22:54:05+08:00">2022-04-28</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">前端项目</span></a>
+                  <a href="/categories/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">后台开发</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">电商项目</span></a>
+                  <a href="/categories/%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/Spring%E7%B3%BB%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">Spring系列</span></a>
                 </span>
             </span>
 
@@ -216,7 +208,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>648</span>
+              <span>141</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -235,36 +227,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="电商项目"><a href="#电商项目" class="headerlink" title="电商项目"></a>电商项目</h1><h2 id="day-01"><a href="#day-01" class="headerlink" title="day-01"></a>day-01</h2><h3 id="01-项目初始化"><a href="#01-项目初始化" class="headerlink" title="01-项目初始化"></a>01-项目初始化</h3><p>01.初始化项目后的各文件说明<br>    <img src="/2022/04/25/%E5%89%8D%E7%AB%AF%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-1.png" class></p>
-<p>02.项目其他配置</p>
-<ol>
-<li><strong>package.json</strong>:script操作脚本指令<br> 可以使其运行项目时自动打开浏览器</li>
-<li><strong>vue.config.js</strong>:<br> 可以关闭语法检查、配置代理服务器…</li>
-<li><strong>jsconfig.json</strong>:<br> 可以配置src文件夹别名 –&gt; @</li>
-</ol>
-<h3 id="02-非路由组件与路由组件："><a href="#02-非路由组件与路由组件：" class="headerlink" title="02-非路由组件与路由组件："></a>02-非路由组件与路由组件：</h3><pre><code>由于当前使用的页面大多为单页面网页/应用，因此常常需要借助路由来实现页面切换。
-其中需要被切换页面组件为路由组件，一般放置于pages\views文件夹中。
-固定的页面或需要被其他路由页面使用的页面组件为非路由组件，一般放置于components文件夹中。
-</code></pre>
-<h3 id="03-vue-router的使用："><a href="#03-vue-router的使用：" class="headerlink" title="03-vue-router的使用："></a>03-vue-router的使用：</h3><ol>
-<li>使用步骤：引入vue-router -&gt; vue使用vue-router插件 -&gt; 将配置的路由暴露并在入口文件中配置给vue实例</li>
-<li>路由配置：简单的配置主要包括component和path</li>
-<li>相关问题：<ol>
-<li>路由传参<ol>
-<li>路由传参使用对象写法时：<br>path无法结合params，需要使用name来结合params使用；<br>query二者均可。</li>
-<li>params参数配置可传可不传：<br>在路由配置处params参数后添加 <strong>?</strong></li>
-<li>params参数为空 如何处理：<br>|| ‘’(并上空字符串)</li>
-<li>props传参：<br>布尔形式：参数为params参数；<br>对象形式：<br>函数形式：</li>
-</ol>
-</li>
-<li>路由导航<ol>
-<li>NavigationDuplicated问题：多次触发时会出现<br> 在push函数后添加promise，成功和失败的回调函数 -&gt; 比较麻烦<br> 修改 push 函数 </li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="04-组件编写："><a href="#04-组件编写：" class="headerlink" title="04-组件编写："></a>04-组件编写：</h3>
+        <h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1><h2 id="07-06"><a href="#07-06" class="headerlink" title="07-06"></a>07-06</h2><h3 id="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"><a href="#①复习Java部分知识点，包括基础、面向对象、异常、集合、反射" class="headerlink" title="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"></a>①复习Java部分知识点，包括基础、面向对象、异常、集合、反射</h3><p>  重点体现在：1、代理模式的理解：之所以使用代理，某种程度上是需要进行功能增强；<br>              2、工厂模式的理解：由于对象(实例)创建过程与调用过程不分离会导致代码大量耦合，即<br>                                改动所创建的对象是会运行到对象的调用过程；</p>
+
     </div>
 
     
@@ -273,7 +237,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/" rel="tag"># 项目实践</a>
+              <a href="/tags/%E6%97%A5%E5%BF%97/" rel="tag"># 日志</a>
           </div>
 
         
@@ -282,13 +246,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" rel="prev" title="leetcode刷题笔记">
-      <i class="fa fa-chevron-left"></i> leetcode刷题笔记
+    <a href="/2022/05/02/%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%94%E8%AE%B0/" rel="prev" title="面试金典笔记">
+      <i class="fa fa-chevron-left"></i> 面试金典笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/" rel="next" title="后台管理项目实践">
-      后台管理项目实践 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -347,7 +308,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">电商项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#day-01"><span class="nav-number">1.1.</span> <span class="nav-text">day-01</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.1.</span> <span class="nav-text">01-项目初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-%E9%9D%9E%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6%E4%B8%8E%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">02-非路由组件与路由组件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-vue-router%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="nav-number">1.1.3.</span> <span class="nav-text">03-vue-router的使用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-%E7%BB%84%E4%BB%B6%E7%BC%96%E5%86%99%EF%BC%9A"><span class="nav-number">1.1.4.</span> <span class="nav-text">04-组件编写：</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.</span> <span class="nav-text">前期回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#07-06"><span class="nav-number">1.1.</span> <span class="nav-text">07-06</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0%E5%A4%8D%E4%B9%A0Java%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%9F%BA%E7%A1%80%E3%80%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%81%E5%BC%82%E5%B8%B8%E3%80%81%E9%9B%86%E5%90%88%E3%80%81%E5%8F%8D%E5%B0%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">①复习Java部分知识点，包括基础、面向对象、异常、集合、反射</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

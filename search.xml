@@ -96,9 +96,22 @@
       </tags>
   </entry>
   <entry>
+    <title>暑期复习、学习小结</title>
+    <url>/2022/07/10/%E6%9A%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E3%80%81%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1><h2 id="07-06"><a href="#07-06" class="headerlink" title="07-06"></a>07-06</h2><h3 id="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"><a href="#①复习Java部分知识点，包括基础、面向对象、异常、集合、反射" class="headerlink" title="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"></a>①复习Java部分知识点，包括基础、面向对象、异常、集合、反射</h3><p>  重点体现在：1、代理模式的理解：之所以使用代理，某种程度上是需要进行功能增强；<br>              2、工厂模式的理解：由于对象(实例)创建过程与调用过程不分离会导致代码大量耦合，即<br>                                改动所创建的对象是会运行到对象的调用过程；</p>
+]]></content>
+      <categories>
+        <category>后台开发</category>
+        <category>Spring系列</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>面试金典笔记</title>
     <url>/2022/05/02/%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="面试金典"><a href="#面试金典" class="headerlink" title="面试金典"></a>面试金典</h1><h2 id="简单题型"><a href="#简单题型" class="headerlink" title="简单题型"></a>简单题型</h2><h3 id="01-判断字符是否全部不同"><a href="#01-判断字符是否全部不同" class="headerlink" title="01-判断字符是否全部不同"></a>01-判断字符是否全部不同</h3>]]></content>
       <categories>
         <category>编程基础</category>
         <category>数据结构与算法</category>
