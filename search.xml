@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>leetcode刷题笔记</title>
-    <url>/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="leetcode刷题"><a href="#leetcode刷题" class="headerlink" title="leetcode刷题"></a>leetcode刷题</h1><h2 id="一、链表"><a href="#一、链表" class="headerlink" title="一、链表"></a>一、链表</h2><h3 id="1、简单类型"><a href="#1、简单类型" class="headerlink" title="1、简单类型"></a>1、简单类型</h3><h4 id="01、合并两有序链表"><a href="#01、合并两有序链表" class="headerlink" title="01、合并两有序链表"></a>01、合并两有序链表</h4><p>1.题目描述：<br>    <img src="/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1-01-%E5%90%88%E5%B9%B6%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8.png" class></p>
-<p>2.解题前的思路：</p>
+    <title>后台管理项目实践</title>
+    <url>/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<h1 id="后台管理项目"><a href="#后台管理项目" class="headerlink" title="后台管理项目"></a>后台管理项目</h1><h2 id="day-01"><a href="#day-01" class="headerlink" title="day-01"></a>day-01</h2><h3 id="01-项目模板介绍"><a href="#01-项目模板介绍" class="headerlink" title="01-项目模板介绍"></a>01-项目模板介绍</h3><ol>
+<li>各文件介绍<img src="/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-01.png" class></li>
+</ol>
 ]]></content>
       <categories>
-        <category>编程基础</category>
-        <category>数据结构与算法</category>
+        <category>前端项目</category>
+        <category>后台管理项目</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>项目实践</tag>
       </tags>
   </entry>
   <entry>
@@ -56,18 +57,17 @@
       </tags>
   </entry>
   <entry>
-    <title>后台管理项目实践</title>
-    <url>/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</url>
-    <content><![CDATA[<h1 id="后台管理项目"><a href="#后台管理项目" class="headerlink" title="后台管理项目"></a>后台管理项目</h1><h2 id="day-01"><a href="#day-01" class="headerlink" title="day-01"></a>day-01</h2><h3 id="01-项目模板介绍"><a href="#01-项目模板介绍" class="headerlink" title="01-项目模板介绍"></a>01-项目模板介绍</h3><ol>
-<li>各文件介绍<img src="/2022/04/28/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/01-01.png" class></li>
-</ol>
+    <title>leetcode刷题笔记</title>
+    <url>/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="leetcode刷题"><a href="#leetcode刷题" class="headerlink" title="leetcode刷题"></a>leetcode刷题</h1><h2 id="一、链表"><a href="#一、链表" class="headerlink" title="一、链表"></a>一、链表</h2><h3 id="1、简单类型"><a href="#1、简单类型" class="headerlink" title="1、简单类型"></a>1、简单类型</h3><h4 id="01、合并两有序链表"><a href="#01、合并两有序链表" class="headerlink" title="01、合并两有序链表"></a>01、合并两有序链表</h4><p>1.题目描述：<br>    <img src="/2022/04/25/leetcode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1-01-%E5%90%88%E5%B9%B6%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8.png" class></p>
+<p>2.解题前的思路：</p>
 ]]></content>
       <categories>
-        <category>前端项目</category>
-        <category>后台管理项目</category>
+        <category>编程基础</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
-        <tag>项目实践</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -98,7 +98,92 @@
   <entry>
     <title>暑期复习、学习小结</title>
     <url>/2022/07/10/%E6%9A%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E3%80%81%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1><h2 id="07-06"><a href="#07-06" class="headerlink" title="07-06"></a>07-06</h2><h3 id="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"><a href="#①复习Java部分知识点，包括基础、面向对象、异常、集合、反射" class="headerlink" title="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"></a>①复习Java部分知识点，包括基础、面向对象、异常、集合、反射</h3><p>  重点体现在：1、代理模式的理解：之所以使用代理，某种程度上是需要进行功能增强；<br>              2、工厂模式的理解：由于对象(实例)创建过程与调用过程不分离会导致代码大量耦合，即<br>                                改动所创建的对象是会运行到对象的调用过程；</p>
+    <content><![CDATA[<h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1><h2 id="07-06"><a href="#07-06" class="headerlink" title="07-06"></a>07-06</h2><h3 id="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"><a href="#①复习Java部分知识点，包括基础、面向对象、异常、集合、反射" class="headerlink" title="①复习Java部分知识点，包括基础、面向对象、异常、集合、反射"></a>①复习Java部分知识点，包括基础、面向对象、异常、集合、反射</h3><h3 id="重点体现在："><a href="#重点体现在：" class="headerlink" title="重点体现在："></a>重点体现在：</h3><pre><code>    1、代理模式的理解：之所以使用代理，某种程度上是需要进行功能增强；
+    2、工厂模式的理解：由于对象(实例)创建过程与调用过程不分离会导致代码大量耦合，即
+                      改动所创建的对象是会运行到对象的调用过程；
+</code></pre>
+<h2 id="07-07"><a href="#07-07" class="headerlink" title="07-07"></a>07-07</h2><h3 id="①复习反射部分的知识："><a href="#①复习反射部分的知识：" class="headerlink" title="①复习反射部分的知识："></a>①复习反射部分的知识：</h3><pre><code>    1、动态代理：①如何创建被代理类的对象？-&gt;使用反射，
+                具体使用Proxy.newProxyInstance()方法：
+                    参数1：类加载器；
+                    参数2：被代理类实现的接口；
+                    参数3：InvocationHandler的实现类
+                ②如何调用被代理类的同名方法？-&gt;InvocationHandler的实现类
+                    要求1：创建一属性为被代理类的对象
+                    要求2：重写 invoke 方法，目的是在创建的代理类调用相应的方法时
+                           会调用 invoke()，这样便可在自定义的invoke()内完成增强逻辑
+    2、JDBC:连接与Statement对象的创建：
+                Statement与preparedStatemment区别在于：
+                    前者可能出现sql注入问题、以及无法传输对象
+                    后者使用比较方便，实际中常用
+</code></pre>
+<h2 id="07-08"><a href="#07-08" class="headerlink" title="07-08"></a>07-08</h2><h3 id="①JDBC知识回顾："><a href="#①JDBC知识回顾：" class="headerlink" title="①JDBC知识回顾："></a>①JDBC知识回顾：</h3><pre><code>    1、JDBC：一组规范、包含面向数据库商的接口及面向编程者的抽象接口
+                步骤：
+                    导入java.sql、
+                    加载并注册驱动(相应的数据库)、
+                    创建连接、
+                    执行sql语句、
+                    获取相应的结果、
+                    释放连接
+    2、连接：加载驱动时会自动执行代码块中的注册驱动的语句：com.mysql.jdbc.Driver 
+                连接时需提供：JDBC URL\user\paswd。
+                使用 DriverManager.getConnection()创建Connection对象
+    3、数据库相关操作：
+                ORM：对象关系映射
+                    将数据库的表对应于工程内的一个对象
+                CRUD：增删改查
+                    创建了数据库的连接后，此时工程内相应的方法对应数据库中的sql语句，
+                    从而进行相应的操作
+</code></pre>
+<h2 id="07-09"><a href="#07-09" class="headerlink" title="07-09"></a>07-09</h2><h3 id="①Spring部分的内容回顾："><a href="#①Spring部分的内容回顾：" class="headerlink" title="①Spring部分的内容回顾："></a>①Spring部分的内容回顾：</h3><pre><code>    1、IOC：
+            ① 降低耦合性、将对象创建的过程交给Spring进行管理-&gt;通过一些接口
+                BeanFactory-&gt;ApplicationContext-&gt;FileSystem..\ClassPath..
+
+            ② Bean管理：普通Bean与
+                        FactoryBean：创建类实现该接口并重写相应的方法可以将其理解为Bean工厂，
+                        配置文件中配置了自定义的类，实际在getBean中获取的Bean却非配置文件中的，
+                        而是配置文件中getObject中的Bean
+
+                        bean生命周期：
+                                创建bean(空参构造器)-&gt;
+                                属性注入-&gt;
+                                初始化-&gt;
+                                可获取状态-&gt;
+                                容器关闭，bean销毁
+
+                    1、对象创建：
+                            ①、xml方式
+                            ②、注解方式
+                    2、属性注入：
+    2、AOP：降低业务逻辑的耦合性
+                回顾之前的动态代理：newProxyInstance中指定了类加载器、相应的接口、InvocationHandler实现类。
+                在InvocationHandler中指明被代理对象，通过重写 invoke 方法实现功能增强。
+</code></pre>
+<h2 id="07-10"><a href="#07-10" class="headerlink" title="07-10"></a>07-10</h2><h3 id="①Tomcat回顾："><a href="#①Tomcat回顾：" class="headerlink" title="①Tomcat回顾："></a>①Tomcat回顾：</h3><pre><code>    1、在我理解，其本质就是运行在本地的一个进程；它能够提供 http协议 将相应文件夹内的文件进行展示
+    2、在idea上的部署，Application context为tomcat服务器所访问的工程路径
+</code></pre>
+<h3 id="②Servlet回顾："><a href="#②Servlet回顾：" class="headerlink" title="②Servlet回顾："></a>②Servlet回顾：</h3><pre><code>    1、定义：Servlet是用于处理请求和响应的接口。
+            也就是客户端(浏览器)的url路径变化会使得客户端向服务器发送请求；
+            而用于处理请求的逻辑则可通过Servlet来进行控制管理
+    2、生命周期：
+            ①执行构造器：由于用于处理逻辑的类为Servlet的实现类，因此底层调用Servlet时，需要创建对象；
+            ②初始化：Servlet接口中的抽象方法；
+            ③执行业务逻辑方法：Servlet主要是用于处理相应的业务逻辑的；
+            ④销毁：当相应的逻辑处理完后，为减少内存占用会销毁相应的对象
+    3、实际常常使用继承 HttpServlet 创建相应的类
+    4、ServletConfig：
+            ①获取xml配置文件中的Servlet实现类的别名；
+            ②获取xml配置文件中的init-params
+            ③获取ServletContext对象
+    5、ServletContext：web工程启动时创建，因此每个web工程中只有一个
+            ①获取xml配置文件中的context-param
+            ②获取指定路径的工程路径和绝对路径(/:指工程路径)
+            ③类似map 进行数据存储
+</code></pre>
+<h2 id="07-11"><a href="#07-11" class="headerlink" title="07-11"></a>07-11</h2><h3 id="①Maven回顾："><a href="#①Maven回顾：" class="headerlink" title="①Maven回顾："></a>①Maven回顾：</h3><pre><code>    1、maven中‘坐标’：groupId，artifactId，versionId
+    2、
+</code></pre>
+<h3 id="②"><a href="#②" class="headerlink" title="②"></a>②</h3><h2 id="07-14"><a href="#07-14" class="headerlink" title="07-14"></a>07-14</h2><h3 id="①SpringMVC回顾："><a href="#①SpringMVC回顾：" class="headerlink" title="①SpringMVC回顾："></a>①SpringMVC回顾：</h3><pre><code>    1、
+</code></pre>
 ]]></content>
       <categories>
         <category>后台开发</category>
