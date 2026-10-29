@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const tags = new Set();
+  for (const p of posts) for (const t of p.data.tags) tags.add(t);
+  return [...tags].map((tag) => ({ params: { tag }, props: { tag } }));
+}
+
+const { tag } = Astro.props;
+const all = await getCollection('posts', ({ data }) => !data.draft);
+const posts = all
+  .filter((p) => p.data.tags.includes(tag))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const fmt = (d) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+---
+
+<Base title={`#${tag}`} description={`标签 ${tag} 下的全部文章`}>
+  <section class="intro">
+    <h1>#{tag}</h1>
+    <p>{posts.length} 篇</p>
+  </section>
+
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <a class="post-item" href={`/posts/${post.id}/`}>
+            <h2 class="post-title">{post.data.title}</h2>
+            <div class="post-meta">
+              <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+            </div>
+            {post.data.summary && <p class="post-summary">{post.data.summary}</p>}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p style="margin-top: 3rem;"><a class="back-link" href="/">← 回到文章列表</a></p>
+</Base>

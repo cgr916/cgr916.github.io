@@ -1,0 +1,35 @@
+---
+interface Props {
+  posts: any[];
+  emptyHint?: string;
+}
+
+const { posts, emptyHint = '还没有文章。' } = Astro.props;
+
+const fmt = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+---
+
+{
+  posts && posts.length > 0 ? (
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li>
+          <a class="post-item" href={`/posts/${post.id}/`}>
+            <h2 class="post-title">
+              {post.data.pinned > 0 && <span class="pin">§ </span>}
+              {post.data.title}
+            </h2>
+            <div class="post-meta">
+              <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+              {post.data.tags.length > 0 && <span>{post.data.tags.join(' / ')}</span>}
+            </div>
+            {post.data.summary && <p class="post-summary">{post.data.summary}</p>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p style="color: var(--ink-3); font-family: var(--mono); font-size: .8rem;">{emptyHint}</p>
+  )
+}

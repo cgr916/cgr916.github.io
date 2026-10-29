@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+---
+
+<Base title="关于" active="about" description={`关于 ${SITE.author}`}>
+  <article>
+    <header class="post-header">
+      <h1>关于</h1>
+    </header>
+
+    <div class="prose">
+      <p>我是 chan_gr。</p>
+
+      <p>
+        白天写代码，晚上偶尔也写。这里是我的笔记本，不是我的作品集——所以有些文章会很碎，有些会很长，取决于那件事到底有多值得说清楚。
+      </p>
+
+      <p>我信几件事：</p>
+
+      <ul>
+        <li>能复现的问题才算问题，说不清的现象只是感觉。</li>
+        <li>简单方案优先，除非性能或安全明确要求复杂度。</li>
+        <li>写下来才算真的想清楚。脑子里“好像懂了”不算。</li>
+      </ul>
+
+      <p>
+        这个博客用 <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
+        搭建，托管在 GitHub Pages 上，没有服务器，也没有数据库。所有内容都是纯 Markdown，Push 上去就发布。
+      </p>
+
+      <p>
+        想聊聊？在 <a href={SITE.github} target="_blank" rel="noopener">GitHub</a> 上找我。
+      </p>
+    </div>
+  </article>
+</Base>
