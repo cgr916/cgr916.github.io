@@ -272,8 +272,9 @@ a:hover {
   margin-top: 0;
 }
 
-.prose p {
-  margin: 0;
+/* 段落之间留白；首段贴着标题不需要额外间距 */
+.prose > :first-child {
+  margin-top: 0;
 }
 
 .prose ul,

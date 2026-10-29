@@ -1,6 +1,10 @@
 # chan_gr 的博客
 
-Astro 5 + GitHub Pages。没有服务器，没有数据库，Markdown 就是内容，`git push` 就是发布。
+Astro 5 + GitHub Pages。没有服务器，没有数据库，Markdown 就是内容。
+
+- 源码：`master` 分支
+- 站点产物：`gh-pages` 分支（Pages 从这里托管）
+- 线上地址：<https://cgr916.github.io>
 
 ## 本地跑起来
 
@@ -15,7 +19,7 @@ npm run dev        # http://localhost:4321
 npm run new "文章标题"
 ```
 
-会在 `src/content/posts/` 下生成一个带好 frontmatter 的文件，默认 `draft: true`（不会被发布）。
+会在 `src/content/posts/` 下生成带好 frontmatter 的文件，默认 `draft: true`（不会发布）。
 
 或者手动新建 `src/content/posts/english-slug.md`：
 
@@ -35,24 +39,34 @@ draft: false
 | 字段 | 说明 |
 | --- | --- |
 | `title` | 标题 |
-| `date` | 日期，格式 `YYYY-MM-DD` |
+| `date` | 日期，`YYYY-MM-DD` |
 | `summary` | 摘要，可留空 |
-| `tags` | 标签数组，自动生成 `/tags/标签名/` 页面 |
-| `pinned` | 置顶权重，数字越大越靠前，默认 0 |
+| `tags` | 标签数组，自动生成 `/tags/标签名/` |
+| `pinned` | 置顶权重，越大越靠前，默认 0 |
 | `draft` | `true` 时不发布 |
 
-文件名会成为 URL：`redis-lock.md` → `/posts/redis-lock/`。**发布后别改文件名**，否则链接会失效。
+文件名即 URL：`redis-lock.md` → `/posts/redis-lock/`。**发布后别改文件名**，否则旧链接会 404。
 
-## 部署
+## 发布
 
-推到 `master` 分支，GitHub Actions 自动构建并发布（`.github/workflows/deploy.yml`）。
+```bash
+GH_TOKEN=你的token ./scripts/deploy.sh
+```
 
-首次部署需要在仓库里做两件事：
+做三件事：`npm run build` → 产物推到 `gh-pages` 分支 → Pages 自动重新发布。约一分钟后生效。
 
-1. **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**
-2. **Settings → Actions → General → Workflow permissions** 选择 **Read and write permissions**
+不想用脚本的话，手动也行：
 
-大约一分钟后访问 `https://cgr916.github.io`。
+```bash
+npm run build
+cd dist && git init && git checkout -b gh-pages && git add -A \
+  && git commit -m deploy && git push -f origin gh-pages
+```
+
+> **为什么是 gh-pages 而不是 GitHub Actions？**
+> 当前 token 没有 `workflow` 权限，无法写入 `.github/workflows/`。走分支发布不需要这个权限。
+> 如果之后想换成 Actions 自动构建，把 `scripts/deploy-workflow.yml` 放回 `.github/workflows/deploy.yml`，
+> 在 Settings → Pages 把 Source 改成 **GitHub Actions** 即可。
 
 ## 改哪里
 
@@ -61,21 +75,18 @@ draft: false
 | 站点名、简介、GitHub 链接、首页自我介绍 | `src/config.ts` |
 | 颜色、字体、行宽、间距 | `src/styles/global.css` 顶部的 CSS 变量 |
 | 导航栏和页脚 | `src/layouts/Base.astro` |
-| 域名 | `astro.config.mjs` 的 `site`，并新建 `public/CNAME` |
+| 域名 | `astro.config.mjs` 的 `site` + `public/CNAME` |
 
 ## 自定义域名（可选）
 
-1. 新建 `public/CNAME`，内容写你的域名，例如 `blog.example.com`
-2. DNS 加一条 CNAME 记录指向 `cgr916.github.io`
-3. 修改 `astro.config.mjs` 里的 `site` 为 `https://blog.example.com`
+1. 新建 `public/CNAME`，内容写域名，如 `blog.example.com`
+2. DNS 加 CNAME 记录指向 `cgr916.github.io`
+3. 改 `astro.config.mjs` 里的 `site` 为 `https://blog.example.com`
 4. 仓库 Settings → Pages → Custom domain 填入域名，勾选 Enforce HTTPS
 
 ## 加评论（可选）
 
-推荐 [giscus](https://giscus.app)，基于 GitHub Discussions，无需后端：
-
-1. 在 giscus.app 按提示授权仓库并拿到 `<script>` 片段
-2. 把片段粘到 `src/pages/posts/[id].astro` 的 `<footer class="post-footer">` 之后
+推荐 [giscus](https://giscus.app)，基于 GitHub Discussions，无需后端。拿到 `<script>` 片段后粘到 `src/pages/posts/[id].astro` 的 `</footer>` 之后。
 
 ## 目录结构
 
@@ -96,10 +107,12 @@ src/
     404.astro
   styles/global.css      全部样式
 public/                  静态资源，原样拷贝
-scripts/new-post.mjs     新建文章脚本
+scripts/new-post.mjs     新建文章
+scripts/deploy.sh        一键发布
+scripts/deploy-workflow.yml  可选的 Actions 工作流（备用）
 ```
 
 ## 设计说明
 
-参考了 Dan Abramov 的 overreacted.io 的克制与 Julia Evans 的 jvns.ca 的温度：
+参考 Dan Abramov 的 overreacted.io 的克制与 Julia Evans 的 jvns.ca 的温度：
 暖白纸底、正文衬线、元信息等宽、全站单一赭红强调色、深色模式跟随系统。没有渐变，没有阴影，没有动画。
