@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>
+      这套博客是怎么搭的 · chan_gr
+    </title><meta name="description" content="Astro + GitHub Pages，没有服务器没有数据库，文件就是内容，Push 就是发布。"><meta name="author" content="chan_gr"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="chan_gr" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="这套博客是怎么搭的"><meta property="og:description" content="Astro + GitHub Pages，没有服务器没有数据库，文件就是内容，Push 就是发布。"><meta property="og:url" content="https://cgr916.github.io/posts/how-this-blog-works/"><meta name="twitter:card" content="summary"><style>
+      html {
+        color-scheme: light dark;
+      }
+    </style><link rel="stylesheet" href="/_astro/about.DtHBWSBP.css"></head> <body> <header class="site-header"> <div class="wrap"> <a class="brand" href="/">chan_gr</a> <nav class="site-nav"> <a href="/">文章</a> <a href="/archive">归档</a> <a href="/about">关于</a> <a href="/rss.xml">RSS</a> </nav> </div> </header> <main class="wrap">  <article> <header class="post-header"> <h1>这套博客是怎么搭的</h1> <div class="post-meta"> <time datetime="2026-10-28T00:00:00.000Z">2026 年 10 月 28 日</time> <span>约 1 分钟</span> <span>工程 / Astro</span> </div> <p class="post-lede">Astro + GitHub Pages，没有服务器没有数据库，文件就是内容，Push 就是发布。</p> </header> <nav class="toc" aria-label="文章目录"><div class="toc-label">目录</div><ul><li><a href="#技术选型">技术选型</a></li><li><a href="#目录结构">目录结构</a></li><li><a href="#写一篇新文章">写一篇新文章</a></li><li><a href="#发布流程">发布流程</a></li><li><a href="#设计上的取舍">设计上的取舍</a></li></ul></nav> <div class="prose"> <p>写完第一篇文章，顺手把这套东西的构造记一笔。以后换机器、换主题、或者想加功能，回来翻这篇就行。</p>
+<h2 id="技术选型">技术选型</h2>
+<p>三个候选：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方案</th><th>特点</th><th>为什么没选</th></tr></thead><tbody><tr><td>Jekyll</td><td>Pages 原生支持，主题多</td><td>Ruby 依赖链，本地预览麻烦</td></tr><tr><td>Hugo</td><td>构建极快，单二进制</td><td>模板语法反直觉，改主题要读 Go template</td></tr><tr><td><strong>Astro</strong></td><td>组件化、零 JS 默认、Markdown 一等公民</td><td>——</td></tr></tbody></table>
+<p>Astro 的好处是构建产物是纯静态 HTML，没有运行时框架，打开速度快得没有商量余地。同时它又保留了组件能力，想加点交互（搜索、主题切换）随时能加。</p>
+<h2 id="目录结构">目录结构</h2>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
+<span class="line"><span>  config.ts            站点信息，改这里就够了</span></span>
+<span class="line"><span>  content/posts/       所有文章，一个 md 一个文件</span></span>
+<span class="line"><span>  layouts/Base.astro   全站骨架：head、导航、页脚</span></span>
+<span class="line"><span>  components/          可复用片段</span></span>
+<span class="line"><span>  pages/               路由，文件名即路径</span></span>
+<span class="line"><span>  styles/global.css    全部样式，一个文件</span></span>
+<span class="line"><span>public/                静态资源，原样拷贝</span></span></code></pre>
+<p>关键约定只有一条：<code>src/content/posts/</code> 下每个 Markdown 文件就是一篇博客，frontmatter 里的 <code>title</code> / <code>date</code> / <code>summary</code> / <code>tags</code> 决定它怎么被索引。</p>
+<h2 id="写一篇新文章">写一篇新文章</h2>
+<p>文件名建议 <code>英文短标题.md</code>（会成为 URL），例如 <code>redis-lock.md</code>：</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="markdown"><code><span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">title: Redis 分布式锁的三个坑</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">date: 2026-11-02</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">summary: 一句话说清这篇讲了什么，会出现在列表和 RSS 里。</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">tags: ['Redis', '并发']</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">draft: false</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">正文……</span></span></code></pre>
+<p><code>draft: true</code> 的文章不会出现在任何页面上，写得半截可以先推上去。</p>
+<h2 id="发布流程">发布流程</h2>
+<p>改完文件，<code>git push</code> 到 <code>master</code>，GitHub Actions 自动构建并部署。大约一分钟后生效。</p>
+<p>本地预览：</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> install</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> dev</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # http://localhost:4321</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    # 生成到 dist/</span></span></code></pre>
+<h2 id="设计上的取舍">设计上的取舍</h2>
+<ul>
+<li><strong>暖白底 + 衬线正文</strong>：长时间阅读比纯白刺眼度低。参考了 overreacted.io 的做法。</li>
+<li><strong>全站一个强调色</strong>：赭红 <code>#a4442b</code>。颜色多了就散了。</li>
+<li><strong>元信息用等宽字体</strong>：日期、标签这类”数据”和正文视觉分离，扫读时更容易跳过。</li>
+<li><strong>深色模式跟随系统</strong>：不做好看的切换按钮，系统怎么设就怎么来。</li>
+</ul>
+<p>克制不是吝啬，是把注意力留给内容。</p> </div> <footer class="post-footer"> <div class="tags"> <a class="tag" href="/tags/%E5%B7%A5%E7%A8%8B/">#工程</a><a class="tag" href="/tags/Astro/">#Astro</a> </div> <nav class="post-nav"> <span></span> <a href="/posts/why-blog/" class="nav-next"> <span class="nav-dir">下一篇 →</span> <span class="nav-title">为什么要有一个自己的博客</span> </a> </nav> <a class="back-link" href="/">← 回到文章列表</a> </footer> </article>  </main> <footer class="site-footer"> <div class="wrap"> <span>© 2026 chan_gr</span> <span> <a href="https://github.com/cgr916" target="_blank" rel="noopener">GitHub</a> <span> · </span> <a href="/rss.xml">RSS</a> </span> </div> </footer> </body></html>
