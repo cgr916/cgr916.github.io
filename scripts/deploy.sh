@@ -17,7 +17,7 @@ trap 'rm -rf "$WORK"' EXIT
 
 cd dist
 git init -q
-git checkout -q -b "$BRANCH"
+git checkout -q -b "$BRANCH" 2>/dev/null || git checkout -q "$BRANCH"
 git add -A
 git -c user.name="${GIT_NAME:-chan_gr}" \
     -c user.email="${GIT_EMAIL:-cgr916@users.noreply.github.com}" \
@@ -30,3 +30,4 @@ else
 fi
 
 echo "已发布到 https://${REPO%%/*}.github.io"
+echo "（Pages 重新构建约 1-2 分钟。若 push 报 403，先确认 GitHub 账号邮箱已验证。）"
