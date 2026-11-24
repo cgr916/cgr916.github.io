@@ -1,47 +1,49 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../config';
-import { getCollection } from 'astro:content';
+import { getPosts, getTags, fmtDate } from '../lib/posts';
 
-const all = await getCollection('posts', ({ data }) => !data.draft);
+const tags = await getTags();
+const all = await getPosts();
 const posts = all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-
-const byYear = new Map();
-for (const post of posts) {
-  const y = post.data.date.getFullYear();
-  if (!byYear.has(y)) byYear.set(y, []);
-  byYear.get(y).push(post);
-}
-const years = [...byYear.entries()].sort((a, b) => b[0] - a[0]);
-
-const fmt = (d) =>
-  `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 ---
 
-<Base title="归档" active="archive" description="全部文章，按年份排列。">
+<Base
+  title="归档"
+  active="archive"
+  description={`全部 ${posts.length} 篇文章，按主题与时间两种索引。`}
+>
   <section class="intro">
     <h1>归档</h1>
-    <p>一共 {posts.length} 篇。时间是唯一的索引。</p>
+    <p>一共 {posts.length} 篇。按时间倒序排，找那篇就行。</p>
   </section>
 
   {
-    years.map(([year, items]) => (
-      <div class="year-group">
-        <h2 class="year-label">{year}</h2>
-        <ul class="post-list">
-          {items.map((post) => (
-            <li>
-              <a class="post-item" href={`/posts/${post.id}/`}>
-                <h3 class="post-title">{post.data.title}</h3>
-                <div class="post-meta">
-                  <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
-                  {post.data.tags.length > 0 && <span>{post.data.tags.join(' / ')}</span>}
-                </div>
-              </a>
-            </li>
+    tags.length > 0 && (
+      <div class="archive-block">
+        <h2 class="section-label">按主题</h2>
+        <nav class="tag-index">
+          {tags.map(({ tag, count }) => (
+            <a href={`/tags/${encodeURIComponent(tag)}/`}>
+              {tag}
+              <span class="tag-count">{count}</span>
+            </a>
           ))}
-        </ul>
+        </nav>
       </div>
-    ))
+    )
   }
+
+  <div class="archive-block">
+    <h2 class="section-label">按时间</h2>
+    <ul class="timeline">
+      {
+        posts.map((post) => (
+          <li>
+            <time datetime={post.data.date.toISOString()}>{fmtDate(post.data.date)}</time>
+            <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </Base>

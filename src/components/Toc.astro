@@ -1,0 +1,24 @@
+---
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { headings } = Astro.props;
+// 只取 h2 / h3，太深的层级进目录反而干扰阅读
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{
+  items.length >= 2 && (
+    <nav class="toc" aria-label="文章目录">
+      <div class="toc-label">目录</div>
+      <ul>
+        {items.map((h) => (
+          <li class:list={[{ 'toc-sub': h.depth === 3 }]}>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}

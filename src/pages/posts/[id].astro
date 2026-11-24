@@ -1,35 +1,40 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Toc from '../../components/Toc.astro';
 import { getCollection, render } from 'astro:content';
+import { getChronoPosts, readingTime } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { id: post.id },
-    props: { post },
-  }));
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const minutes = readingTime(post.body);
 
-const fmt = (d) =>
-  `${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日`;
+// 上一篇 / 下一篇（按纯时间序）
+const chrono = await getChronoPosts();
+const idx = chrono.findIndex((p) => p.id === post.id);
+const newer = idx > 0 ? chrono[idx - 1] : null;
+const older = idx >= 0 && idx < chrono.length - 1 ? chrono[idx + 1] : null;
+
+const fmt = (d: Date) => `${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日`;
 ---
 
-<Base
-  title={post.data.title}
-  description={post.data.summary || post.data.title}
-  ogType="article"
->
+<Base title={post.data.title} description={post.data.summary || post.data.title} ogType="article">
   <article>
     <header class="post-header">
       <h1>{post.data.title}</h1>
       <div class="post-meta">
         <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+        <span>约 {minutes} 分钟</span>
         {post.data.tags.length > 0 && <span>{post.data.tags.join(' / ')}</span>}
       </div>
+      {post.data.summary && <p class="post-lede">{post.data.summary}</p>}
     </header>
+
+    <Toc headings={headings} />
 
     <div class="prose">
       <Content />
@@ -45,6 +50,30 @@ const fmt = (d) =>
           </div>
         )
       }
+
+      {
+        (newer || older) && (
+          <nav class="post-nav">
+            {older ? (
+              <a href={`/posts/${older.id}/`}>
+                <span class="nav-dir">← 上一篇</span>
+                <span class="nav-title">{older.data.title}</span>
+              </a>
+            ) : (
+              <span />
+            )}
+            {newer ? (
+              <a href={`/posts/${newer.id}/`} class="nav-next">
+                <span class="nav-dir">下一篇 →</span>
+                <span class="nav-title">{newer.data.title}</span>
+              </a>
+            ) : (
+              <span />
+            )}
+          </nav>
+        )
+      }
+
       <a class="back-link" href="/">← 回到文章列表</a>
     </footer>
   </article>

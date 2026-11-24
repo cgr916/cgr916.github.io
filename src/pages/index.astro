@@ -2,13 +2,10 @@
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import { SITE } from '../config';
-import { getCollection } from 'astro:content';
+import { getPosts, getTags } from '../lib/posts';
 
-const all = await getCollection('posts', ({ data }) => !data.draft);
-const posts = all.sort((a, b) => {
-  if (a.data.pinned !== b.data.pinned) return b.data.pinned - a.data.pinned;
-  return b.data.date.getTime() - a.data.date.getTime();
-});
+const posts = await getPosts();
+const tags = await getTags();
 ---
 
 <Base active="home">
@@ -16,6 +13,19 @@ const posts = all.sort((a, b) => {
     <h1>{SITE.tagline}</h1>
     <p>{SITE.intro}</p>
   </section>
+
+  {
+    tags.length > 0 && (
+      <nav class="tag-index" aria-label="主题">
+        {tags.map(({ tag, count }) => (
+          <a href={`/tags/${encodeURIComponent(tag)}/`}>
+            {tag}
+            <span class="tag-count">{count}</span>
+          </a>
+        ))}
+      </nav>
+    )
+  }
 
   <h2 class="section-label">最近写的</h2>
   <PostList posts={posts} emptyHint="第一篇还在路上。" />
